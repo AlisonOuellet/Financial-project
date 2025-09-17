@@ -20,6 +20,9 @@ GIF-7005/
 ├── README.md          # Documentation du projet
 
 ## Démarrage rapide
+## Démarrage rapide
+
+### Option 1 : avec Conda
 
 1. Cloner le dépôt :
 
@@ -37,6 +40,34 @@ GIF-7005/
    jupytext --set-formats ipynb,py notebooks/nom_du_notebook.ipynb
 
    # Pour convertir un notebook existant en script Python
+   jupytext --convert notebooks/nom_du_notebook.ipynb --to py
+
+---
+
+### Option 2 : avec un environnement virtuel Python (venv + pip)
+
+1. Cloner le dépôt :
+
+   git clone https://github.com/GIF-7005-Equipe-12/Projet.git
+   cd Projet
+
+2. Créer et activer l’environnement virtuel :
+
+   python -m venv venv
+
+   # Sur Windows :
+   venv\Scripts\activate
+
+   # Sur macOS/Linux :
+   source venv/bin/activate
+
+3. Installer les dépendances :
+
+   pip install -r requirements.txt
+
+4. Synchroniser les notebooks avec Jupytext :
+
+   jupytext --set-formats ipynb,py notebooks/nom_du_notebook.ipynb
    jupytext --convert notebooks/nom_du_notebook.ipynb --to py
 
 
