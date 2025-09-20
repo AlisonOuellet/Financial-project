@@ -20,7 +20,6 @@ GIF-7005/
 ├── README.md          # Documentation du projet
 
 ## Démarrage rapide
-## Démarrage rapide
 
 ### Option 1 : avec Conda
 
@@ -97,17 +96,9 @@ Dans ce projet, les notebooks Jupyter sont synchronisés avec des fichiers `.py`
 
 3. Travailler dans le notebook comme d’habitude.
 
-4. Avant de committer :
+4. Ajouter les changements:
 
-   - Nettoyer les outputs du `.ipynb` (optionnel mais recommandé) :
-
-     nbstripout notebooks/mon_notebook.ipynb
-
-   - Ajouter uniquement le fichier `.py` au commit :
-
-     git add notebooks/mon_notebook.py
-
-   - Ne pas ajouter le fichier `.ipynb`, sauf si nécessaire pour exécution ou partage.
+   git add .
 
 5. Committer avec un message clair :
 
