@@ -82,7 +82,7 @@ Les modèles entraînés sont sauvegardés dans `models/`.
 
 ## Convention de commit des notebooks avec Jupytext
 
-Dans ce projet, les notebooks Jupyter sont synchronisés avec des fichiers `.py` grâce à Jupytext. Pour faciliter la lecture, le versionnage et la collaboration, **seuls les fichiers `.py` sont commités dans Git**, et non les `.ipynb`.
+Dans ce projet, les notebooks Jupyter sont synchronisés avec des fichiers `.py` grâce à Jupytext. Pour faciliter la lecture, le versionnage et la collaboration.
 
 ### Étapes pour travailler avec un notebook
 
