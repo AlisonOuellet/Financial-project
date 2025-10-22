@@ -46,7 +46,7 @@ Exemple:
 /data/raw/FM24
 /data/raw/FM36
 /data/raw/FM48
-/data/raw/FM50
+/data/raw/FM60
 ```
 
 ### Option 2 : avec un environnement virtuel Python (venv + pip)
@@ -76,6 +76,14 @@ Exemple:
 
 5. Extraire les données **CSV** FMDataV2 dans le dossier /data/raw
 > Les données sont disponibles ici: https://data.mendeley.com/datasets/bzr2rxttvz/3
+```
+Exemple: 
+/data/raw/FM12
+/data/raw/FM24
+/data/raw/FM36
+/data/raw/FM48
+/data/raw/FM60
+```
 
 ## Données
 > Les données sont disponibles ici: https://data.mendeley.com/datasets/bzr2rxttvz/3
