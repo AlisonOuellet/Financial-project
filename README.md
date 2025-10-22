@@ -9,7 +9,7 @@ Ce dépôt contient le projet de session réalisé par l'équipe 12 dans le cadr
 ## Structure du projet
 
 GIF-7005/
-├── notebooks/         # Notebooks Jupyter collaboratifs pour exploration et prototypage
+├── /         # Notebooks Jupyter collaboratifs pour exploration et prototypage
 ├── src/               # Code Python modulaire (fonctions, classes, pipelines)
 ├── data/
 │   ├── raw/           # Données brutes (non modifiées)
@@ -36,7 +36,7 @@ GIF-7005/
 3. Synchroniser les notebooks avec Jupytext :
 
    # Pour activer la synchronisation entre .ipynb et .py
-   jupytext --set-formats ipynb,py notebooks/nom_du_notebook.ipynb
+   jupytext --set-formats ipynb,py /nom_du_notebook.ipynb
 
 4. Extraire les données **CSV** FMDataV2 dans le dossier /data/raw
 > Les données sont disponibles ici: https://data.mendeley.com/datasets/bzr2rxttvz/3
@@ -72,7 +72,7 @@ Exemple:
 
 4. Synchroniser les notebooks avec Jupytext :
 
-   jupytext --set-formats ipynb,py notebooks/nom_du_notebook.ipynb
+   jupytext --set-formats ipynb,py /nom_du_notebook.ipynb
 
 5. Extraire les données **CSV** FMDataV2 dans le dossier /data/raw
 > Les données sont disponibles ici: https://data.mendeley.com/datasets/bzr2rxttvz/3
@@ -108,11 +108,11 @@ Dans ce projet, les notebooks Jupyter sont synchronisés avec des fichiers `.py`
 
 ### Étapes pour travailler avec un notebook
 
-1. Créer ou ouvrir un notebook `.ipynb` dans `notebooks/`.
+1. Créer ou ouvrir un notebook `.ipynb` dans `/`.
 
 2. Synchroniser le notebook avec un fichier `.py` :
 
-   jupytext --set-formats ipynb,py notebooks/mon_notebook.ipynb
+   jupytext --set-formats ipynb,py mon_notebook.ipynb
 
    Cela crée automatiquement `mon_notebook.py` dans le même dossier.
 
