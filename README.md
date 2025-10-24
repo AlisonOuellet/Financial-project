@@ -38,8 +38,9 @@ GIF-7005/
    # Pour activer la synchronisation entre .ipynb et .py
    jupytext --set-formats ipynb,py /nom_du_notebook.ipynb
 
-4. Extraire les données **CSV** FMDataV2 dans le dossier /data/raw
+4. Télécharger les données FMDataV2.zip et OutOfUniverse.zip
 > Les données sont disponibles ici: https://data.mendeley.com/datasets/bzr2rxttvz/3
+5. Extraire les données **CSV** FMDataV2 dans le dossier /data/raw
 ```
 Exemple: 
 /data/raw/FM12
@@ -47,6 +48,13 @@ Exemple:
 /data/raw/FM36
 /data/raw/FM48
 /data/raw/FM60
+```
+6. Extraire les données OutOfUniverse.zip dans le dossier /data/raw/FM12 et **renommer les fichiers**.
+> Il y a seulement des données OOU pour la fenêtre FM12.
+```
+Exemple:
+/data/raw/FM12/green/OOU.sas7bdat
+/data/raw/FM12/red/OOU.sas7bdat
 ```
 
 ### Option 2 : avec un environnement virtuel Python (venv + pip)
@@ -74,8 +82,9 @@ Exemple:
 
    jupytext --set-formats ipynb,py /nom_du_notebook.ipynb
 
-5. Extraire les données **CSV** FMDataV2 dans le dossier /data/raw
+5. Télécharger les données FMDataV2.zip et OutOfUniverse.zip
 > Les données sont disponibles ici: https://data.mendeley.com/datasets/bzr2rxttvz/3
+6. Extraire les données **CSV** FMDataV2 dans le dossier /data/raw
 ```
 Exemple: 
 /data/raw/FM12
@@ -83,6 +92,13 @@ Exemple:
 /data/raw/FM36
 /data/raw/FM48
 /data/raw/FM60
+```
+7. Extraire les données OutOfUniverse.zip dans le dossier /data/raw/FM12 et **renommer les fichiers**.
+> Il y a seulement des données OOU pour la fenêtre FM12.
+```
+Exemple:
+/data/raw/FM12/green/OOU.sas7bdat
+/data/raw/FM12/red/OOU.sas7bdat
 ```
 
 ## Données
@@ -112,9 +128,9 @@ Dans ce projet, les notebooks Jupyter sont synchronisés avec des fichiers `.py`
 
 2. Synchroniser le notebook avec un fichier `.py` :
 
-   jupytext --set-formats ipynb,py mon_notebook.ipynb
+   jupytext --set-formats ipynb,py project.ipynb
 
-   Cela crée automatiquement `mon_notebook.py` dans le même dossier.
+   Cela crée automatiquement `project.py` dans le même dossier.
 
 3. Travailler dans le notebook comme d’habitude.
 

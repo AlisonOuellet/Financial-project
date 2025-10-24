@@ -16,3 +16,4 @@ dependencies:
   - pip:
       - jupytext
       - nbstripout
+      - ydata-profiling

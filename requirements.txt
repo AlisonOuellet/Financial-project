@@ -8,3 +8,4 @@ seaborn
 scikit-learn
 jupytext
 nbstripout
+ydata-profiling
