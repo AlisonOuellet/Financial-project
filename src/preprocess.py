@@ -69,12 +69,3 @@ def load_processed_data(project_path, windows=["FM12", "FM24", "FM36", "FM48", "
                 else:
                     print(f"Fichier introuvable : {file_path}")
     return pd.concat(dataframes, ignore_index=True)
-
-
-#PROJECT_PATH = os.getcwd()
-#process_and_save_all(PROJECT_PATH, windows=["FM12"], splits=["OOU"])
-
-#df_all = load_processed_data(PROJECT_PATH, windows=["FM12"])
-
-#print(df_all['Origination_date'].unique())
-#print(df_all.shape)
