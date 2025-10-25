@@ -9,7 +9,7 @@ Ce dépôt contient le projet de session réalisé par l'équipe 12 dans le cadr
 ## Structure du projet
 
 GIF-7005/
-├── notebooks/         # Notebooks Jupyter collaboratifs pour exploration et prototypage
+├── /         # Notebooks Jupyter collaboratifs pour exploration et prototypage
 ├── src/               # Code Python modulaire (fonctions, classes, pipelines)
 ├── data/
 │   ├── raw/           # Données brutes (non modifiées)
@@ -36,7 +36,26 @@ GIF-7005/
 3. Synchroniser les notebooks avec Jupytext :
 
    # Pour activer la synchronisation entre .ipynb et .py
-   jupytext --set-formats ipynb,py notebooks/nom_du_notebook.ipynb
+   jupytext --set-formats ipynb,py /nom_du_notebook.ipynb
+
+4. Télécharger les données FMDataV2.zip et OutOfUniverse.zip
+> Les données sont disponibles ici: https://data.mendeley.com/datasets/bzr2rxttvz/3
+5. Extraire les données **CSV** FMDataV2 dans le dossier /data/raw
+```
+Exemple: 
+/data/raw/FM12
+/data/raw/FM24
+/data/raw/FM36
+/data/raw/FM48
+/data/raw/FM60
+```
+6. Extraire les données OutOfUniverse.zip dans le dossier /data/raw/FM12 et **renommer les fichiers**.
+> Il y a seulement des données OOU pour la fenêtre FM12.
+```
+Exemple:
+/data/raw/FM12/green/OOU.sas7bdat
+/data/raw/FM12/red/OOU.sas7bdat
+```
 
 ### Option 2 : avec un environnement virtuel Python (venv + pip)
 
@@ -61,10 +80,29 @@ GIF-7005/
 
 4. Synchroniser les notebooks avec Jupytext :
 
-   jupytext --set-formats ipynb,py notebooks/nom_du_notebook.ipynb
+   jupytext --set-formats ipynb,py /nom_du_notebook.ipynb
+
+5. Télécharger les données FMDataV2.zip et OutOfUniverse.zip
+> Les données sont disponibles ici: https://data.mendeley.com/datasets/bzr2rxttvz/3
+6. Extraire les données **CSV** FMDataV2 dans le dossier /data/raw
+```
+Exemple: 
+/data/raw/FM12
+/data/raw/FM24
+/data/raw/FM36
+/data/raw/FM48
+/data/raw/FM60
+```
+7. Extraire les données OutOfUniverse.zip dans le dossier /data/raw/FM12 et **renommer les fichiers**.
+> Il y a seulement des données OOU pour la fenêtre FM12.
+```
+Exemple:
+/data/raw/FM12/green/OOU.sas7bdat
+/data/raw/FM12/red/OOU.sas7bdat
+```
 
 ## Données
-
+> Les données sont disponibles ici: https://data.mendeley.com/datasets/bzr2rxttvz/3
 Les données brutes sont stockées dans `data/raw/`. Les données nettoyées sont dans `data/processed/`.
 
 Les fichiers volumineux ne sont pas versionnés dans GitHub. 
@@ -86,13 +124,13 @@ Dans ce projet, les notebooks Jupyter sont synchronisés avec des fichiers `.py`
 
 ### Étapes pour travailler avec un notebook
 
-1. Créer ou ouvrir un notebook `.ipynb` dans `notebooks/`.
+1. Créer ou ouvrir un notebook `.ipynb` dans `/`.
 
 2. Synchroniser le notebook avec un fichier `.py` :
 
-   jupytext --set-formats ipynb,py notebooks/mon_notebook.ipynb
+   jupytext --set-formats ipynb,py project.ipynb
 
-   Cela crée automatiquement `mon_notebook.py` dans le même dossier.
+   Cela crée automatiquement `project.py` dans le même dossier.
 
 3. Travailler dans le notebook comme d’habitude.
 
