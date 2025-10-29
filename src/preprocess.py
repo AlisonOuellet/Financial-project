@@ -9,14 +9,10 @@ def yyqq_to_date(yyqq):
     return pd.Timestamp(year=year, month=month, day=1)
 
 def create_loan_date_column(data):
-    data = data.copy()
-
     data["Origination_date"] = data["Loanref"].apply(yyqq_to_date)
     return data
 
 def to_float64(data):
-    data = data.copy()
-
     exclude = ["Origination_date"]
 
     for col in data.columns:
@@ -26,14 +22,17 @@ def to_float64(data):
     return data
 
 def round_float64(data, n_decimales=4):
-    data = data.copy()
     float_cols = data.select_dtypes(include='float64').columns
     data[float_cols] = data[float_cols].round(n_decimales)
     return data
 
-
+def impute_missing_data(data):
+    ## TODO Analyser la pertinence d'utiliser une autre méthode d'imputation
+    cleaned_df = data.dropna()
+    return cleaned_df
 
 def preprocess(data):
+    data = data.copy()
     data = create_loan_date_column(data)
     data = data.sort_values("Origination_date")
 
@@ -44,6 +43,8 @@ def preprocess(data):
             data[col] = data[col] / 100.0
 
     data = round_float64(data)
+
+    data = impute_missing_data(data)
 
     keep_colnames = [
         "Origination_date", "Credit_Score", "Mortgage_Insurance", "Number_of_units",
