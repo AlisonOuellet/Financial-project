@@ -32,40 +32,66 @@ def preprocess(data):
     return data[keep_colnames]
 
 def process_and_save_all(project_path, windows=["FM12", "FM24", "FM36", "FM48", "FM60"], segments=["green", "red"], splits=["train", "OOS", "OOT", "OOU"]):
+    processed_files = 0
     for window in windows:
         for segment in segments:
             for split in splits:
                 filename = f"{split}_{window[2:]}.csv"
                 if split == "OOU":
-                    filename = f"{split}.sas7bdat"
+                    filename = f"oouandoot_{window[2:]}_{segment}.sas7bdat"  # Updated SAS filename pattern
                 raw_path = os.path.join(project_path, "data", "raw", window, segment, filename)
+                
+                print(f"\nVérification du fichier : {raw_path}")
                 if os.path.exists(raw_path):
-                    print(f"Traitement : {raw_path}")
-                    if split == "OOU":
-                        df = pd.read_sas(raw_path, encoding="utf-8")
-                    else:
-                        df = pd.read_csv(raw_path)
-                    df_processed = preprocess(df)
+                    try:
+                        print(f"Traitement : {raw_path}")
+                        if split == "OOU":
+                            df = pd.read_sas(raw_path, encoding="utf-8")
+                        else:
+                            df = pd.read_csv(raw_path)
+                        print(f"Données chargées. Dimensions: {df.shape}")
+                        
+                        df_processed = preprocess(df)
+                        print(f"Données prétraitées. Dimensions: {df_processed.shape}")
 
-                    save_dir = os.path.join(project_path, "data", "processed", window, segment)
-                    os.makedirs(save_dir, exist_ok=True)
-                    save_path = os.path.join(save_dir, f"{split}_{window[2:]}.csv")
+                        save_dir = os.path.join(project_path, "data", "processed", window, segment)
+                        os.makedirs(save_dir, exist_ok=True)
+                        save_path = os.path.join(save_dir, f"{split}_{window[2:]}.csv")
 
-                    df_processed.to_csv(save_path, index=False)
-                    print(f"Sauvegardé : {save_path}")
+                        df_processed.to_csv(save_path, index=False)
+                        print(f"Sauvegardé : {save_path}")
+                        processed_files += 1
+                    except Exception as e:
+                        print(f"Erreur lors du traitement de {raw_path}: {str(e)}")
                 else:
                     print(f"Fichier introuvable : {raw_path}")
+    
+    if processed_files == 0:
+        raise ValueError(f"Aucun fichier n'a été traité. Vérifiez que les fichiers existent dans {os.path.join(project_path, 'data', 'raw')}")
 
 def load_processed_data(project_path, windows=["FM12", "FM24", "FM36", "FM48", "FM60"], segments=["green", "red"], splits=["train", "OOS", "OOT", "OOU"]):
     dataframes = []
+    found_files = 0
     for window in windows:
         for segment in segments:
             for split in splits:
                 filename = f"{split}_{window[2:]}.csv"
                 file_path = os.path.join(project_path, "data", "processed", window, segment, filename)
+                print(f"\nRecherche du fichier : {file_path}")
                 if os.path.exists(file_path):
-                    df = pd.read_csv(file_path)
-                    dataframes.append(df)
+                    try:
+                        print(f"Chargement : {file_path}")
+                        df = pd.read_csv(file_path)
+                        print(f"Fichier chargé. Dimensions: {df.shape}")
+                        dataframes.append(df)
+                        found_files += 1
+                    except Exception as e:
+                        print(f"Erreur lors du chargement de {file_path}: {str(e)}")
                 else:
                     print(f"Fichier introuvable : {file_path}")
+    
+    if found_files == 0:
+        raise ValueError(f"Aucun fichier n'a été trouvé dans {os.path.join(project_path, 'data', 'processed')}. Exécutez d'abord process_and_save_all()")
+    
+    print(f"\nConcaténation de {len(dataframes)} fichiers...")
     return pd.concat(dataframes, ignore_index=True)
