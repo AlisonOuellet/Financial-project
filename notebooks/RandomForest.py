@@ -46,7 +46,6 @@ def main():
         from explore_data import summarize_data_to_html
         from preprocess import process_and_save_all, load_processed_data
 
-        # Rechargement si modification en cours de session
         importlib.reload(explore_data)
         importlib.reload(preprocess)
 
