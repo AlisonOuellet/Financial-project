@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 import sys
+import numpy as np
 from tqdm import tqdm
 from datetime import datetime
 
@@ -137,10 +138,27 @@ def reduce_and_process_data(project_path, sample_size=0.1, nrows=None, n_oversam
                 if os.path.exists(raw_path):
                     try:
                         print(f"\nTraitement de {filename}")
-                        # Charger les données avec limitation du nombre de lignes
-                        df = pd.read_csv(raw_path, nrows=nrows)
+                        
+                        # Compter le nombre total de lignes dans le fichier
+                        total_rows = sum(1 for _ in open(raw_path)) - 1  # -1 pour l'en-tête
+                        print(f"Nombre total de lignes dans le fichier: {total_rows}")
+                        
+                        if nrows is not None:
+                            # Générer une liste d'indices aléatoires à garder
+                            # +1 pour prendre en compte l'en-tête qui est toujours inclus
+                            indices_to_skip = sorted(np.random.choice(
+                                range(1, total_rows + 1),
+                                size=total_rows - nrows,
+                                replace=False
+                            ))
+                            # Charger les données avec sélection aléatoire
+                            df = pd.read_csv(raw_path, skiprows=indices_to_skip)
+                        else:
+                            # Charger toutes les données si nrows est None
+                            df = pd.read_csv(raw_path)
+                            
                         original_size = len(df)
-                        print(f"Taille originale: {original_size} lignes")
+                        print(f"Taille du dataset: {original_size} lignes")
                         reduced_size = len(df)
                         
                         print(f"Taille réduite: {reduced_size} lignes")
@@ -200,10 +218,3 @@ if __name__ == "__main__":
         windows=WINDOWS
     )
     
-    # Alternative: utiliser l'échantillonnage par pourcentage
-    # reduce_and_process_data(
-    #     project_path=PROJECT_PATH,
-    #     nrows=None,  # Charger toutes les lignes
-    #     sample_size=SAMPLE_SIZE,  # Puis prendre 10% des données
-    #     windows=WINDOWS
-    # )

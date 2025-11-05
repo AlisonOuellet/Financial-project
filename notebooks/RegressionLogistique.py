@@ -45,19 +45,6 @@ def main():
         importlib.reload(explore_data)
         importlib.reload(preprocess)
 
-        # Vérifier si les données brutes existent
-        raw_data_path = os.path.join(PROJECT_PATH, "data", "raw", "FM12")
-        if not os.path.exists(raw_data_path):
-            raise FileNotFoundError(f"Le dossier des données brutes n'existe pas: {raw_data_path}")
-
-        # Prétraitement des données seulement si nécessaire
-        processed_data_path = os.path.join(PROJECT_PATH, "data", "processed", "FM12")
-        if not os.path.exists(processed_data_path):
-            print("Dossier de données prétraitées non trouvé. Lancement du prétraitement...")
-            process_and_save_all(PROJECT_PATH, windows=["FM12"])
-        else:
-            print("Dossier de données prétraitées trouvé.")
-
         # Importation des données prétraitées
         print("Chargement des données prétraitées...")
         try:
@@ -66,9 +53,6 @@ def main():
                 raise ValueError("Le DataFrame chargé est vide")
         except Exception as e:
             print(f"Erreur lors du chargement des données: {str(e)}")
-            print("Tentative de retraitement des données...")
-            process_and_save_all(PROJECT_PATH, windows=["FM12"])
-            data = load_processed_data(PROJECT_PATH, windows=["FM12"])
         
         # Afficher les informations sur le dataset
         print("\nInformations sur le dataset:")
