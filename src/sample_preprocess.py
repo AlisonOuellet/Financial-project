@@ -71,7 +71,38 @@ def extract_date_features(df):
     
     return df
 
-def reduce_and_process_data(project_path, sample_size=0.1, nrows=None, windows=["FM12"], segments=["green", "red"], splits=["train", "OOS", "OOT"]):
+def oversample_defaults(df, n_times=5):
+    """
+    Duplique les cas de défaut n fois dans le dataset.
+    
+    Args:
+        df (pd.DataFrame): DataFrame contenant les données
+        n_times (int): Nombre de fois que les cas de défaut doivent être dupliqués
+    
+    Returns:
+        pd.DataFrame: DataFrame avec les cas de défaut dupliqués
+    """
+    # Séparer les cas de défaut et non-défaut
+    defaults = df[df['DFlag'] == 1]
+    non_defaults = df[df['DFlag'] == 0]
+    
+    # Dupliquer les cas de défaut
+    duplicated_defaults = pd.concat([defaults] * n_times, ignore_index=True)
+    
+    # Combiner les données
+    df_balanced = pd.concat([non_defaults, duplicated_defaults], ignore_index=True)
+    
+    # Mélanger les données
+    df_balanced = df_balanced.sample(frac=1, random_state=42).reset_index(drop=True)
+    
+    print(f"Distribution des classes après oversampling:")
+    print(f"Nombre total d'observations: {len(df_balanced)}")
+    print(f"Cas de non-défaut: {len(df_balanced[df_balanced['DFlag'] == 0])}")
+    print(f"Cas de défaut: {len(df_balanced[df_balanced['DFlag'] == 1])}")
+    
+    return df_balanced
+
+def reduce_and_process_data(project_path, sample_size=0.1, nrows=None, n_oversample=5, windows=["FM12"], segments=["green", "red"], splits=["train", "OOS", "OOT"]):
     """
     Charge les données brutes, les réduit et les prétraite.
     
@@ -79,6 +110,7 @@ def reduce_and_process_data(project_path, sample_size=0.1, nrows=None, windows=[
         project_path (str): Chemin du projet
         sample_size (float): Proportion des données à conserver (entre 0 et 1)
         nrows (int, optional): Nombre de lignes à charger. Si None, charge toutes les lignes
+        n_oversample (int): Nombre de fois que les cas de défaut doivent être dupliqués
         windows (list): Liste des fenêtres temporelles à traiter
         segments (list): Liste des segments à traiter
         splits (list): Liste des splits à traiter
@@ -125,6 +157,16 @@ def reduce_and_process_data(project_path, sample_size=0.1, nrows=None, windows=[
                         print("Extraction des caractéristiques temporelles...")
                         df_processed = extract_date_features(df_processed)
                         
+                        # Appliquer l'oversampling uniquement sur les données d'entraînement
+                        if split == "train":
+                            print("\nApplication de l'oversampling sur les données d'entraînement...")
+                            print("Distribution des classes avant oversampling:")
+                            print(f"Nombre total d'observations: {len(df_processed)}")
+                            print(f"Cas de non-défaut: {len(df_processed[df_processed['DFlag'] == 0])}")
+                            print(f"Cas de défaut: {len(df_processed[df_processed['DFlag'] == 1])}")
+                            
+                            df_processed = oversample_defaults(df_processed, n_times=n_oversample)
+                        
                         # Sauvegarder les données prétraitées
                         save_dir = os.path.join(project_path, "data", "processed", window, segment)
                         os.makedirs(save_dir, exist_ok=True)
@@ -146,14 +188,15 @@ if __name__ == "__main__":
     PROJECT_PATH = os.getcwd()
     
     # Paramètres de réduction et de traitement
-    NROWS = 1000000  # Charger seulement les 1000 premières lignes
-    # SAMPLE_SIZE = 0.1  # Alternative: utiliser 10% des données
+    NROWS = 100000  # Charger seulement les 1000 premières lignes
+    N_OVERSAMPLE = 500  # Nombre de fois que les cas de défaut seront dupliqués
     WINDOWS = ["FM12","FM24","FM36","FM48","FM60"]  # Seulement FM12 pour commencer
     
     # Lancer le traitement avec limitation du nombre de lignes
     reduce_and_process_data(
         project_path=PROJECT_PATH,
         nrows=NROWS,  # Utiliser un nombre fixe de lignes
+        n_oversample=N_OVERSAMPLE,  # Nombre de duplications des cas de défaut
         windows=WINDOWS
     )
     
