@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+from sklearn.preprocessing import StandardScaler
 
 def yyqq_to_date(yyqq):
     yy = int(yyqq[1:3])
@@ -48,7 +49,7 @@ def preprocess(data):
     data = data.copy()
     data = create_loan_date_column(data)
     data = data.sort_values("Origination_date")
-    data = data.drop(columns=['Loanref'])
+    data = data.drop(columns=['Loanref', 'Origination_date']) # We drop origination_date for now, it will be added back when we split
 
     data = to_float64(data)
 
@@ -59,6 +60,10 @@ def preprocess(data):
     data = round_float64(data)
 
     data = impute_missing_data(data)
+
+    feature_cols = [col for col in data.columns if col != "DFlag"]
+    scaler = StandardScaler()
+    data[feature_cols] = scaler.fit_transform(data[feature_cols])
 
     return data
 
