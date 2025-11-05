@@ -12,12 +12,28 @@ def create_loan_date_column(data):
     data["Origination_date"] = data["Loanref"].apply(yyqq_to_date)
     return data
 
-def preprocess(data):
-    data = create_loan_date_column(data)
-    data = data.sort_values("Origination_date")
+def to_float64(data):
+    exclude = ["Origination_date"]
 
+    for col in data.columns:
+        if col not in exclude:
+            data[col] = pd.to_numeric(data[col], errors='coerce').astype('float64')
+
+    return data
+
+def round_float64(data, n_decimales=4):
+    float_cols = data.select_dtypes(include='float64').columns
+    data[float_cols] = data[float_cols].round(n_decimales)
+    return data
+
+def impute_missing_data(data):
+    ## TODO Analyser la pertinence d'utiliser une autre méthode d'imputation
+    cleaned_df = data.dropna()
+    return cleaned_df
+
+def preprocess(data):
     keep_colnames = [
-        "Origination_date", "Credit_Score", "Mortgage_Insurance", "Number_of_units",
+        "Loanref", "Credit_Score", "Mortgage_Insurance", "Number_of_units",
         "CLoan_to_value", "Debt_to_income", "OLoan_to_value",
         "Single_borrower",
         "is_Loan_purpose_purc", "is_Loan_purpose_cash", "is_Loan_purpose_noca",
@@ -28,8 +44,23 @@ def preprocess(data):
         "is_Property_type_pud", "is_Property_type_sing",
         "DFlag"
     ]
+    data = data[keep_colnames]
+    data = data.copy()
+    data = create_loan_date_column(data)
+    data = data.sort_values("Origination_date")
+    data = data.drop(columns=['Loanref'])
 
-    return data[keep_colnames]
+    data = to_float64(data)
+
+    for col in ["CLoan_to_value", "OLoan_to_value"]:
+        if col in data.columns:
+            data[col] = data[col] / 100.0
+
+    data = round_float64(data)
+
+    data = impute_missing_data(data)
+
+    return data
 
 def process_and_save_all(project_path, windows=["FM12", "FM24", "FM36", "FM48", "FM60"], segments=["green", "red"], splits=["train", "OOS", "OOT", "OOU"]):
     for window in windows:
