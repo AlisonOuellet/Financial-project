@@ -103,7 +103,7 @@ def oversample_defaults(df, n_times=5):
     
     return df_balanced
 
-def reduce_and_process_data(project_path, sample_size=0.1, nrows=None, n_oversample=5, windows=["FM12"], segments=["green", "red"], splits=["train", "OOS", "OOT"]):
+def reduce_and_process_data(project_path, nrows=None, n_oversample=5, windows=["FM12"], segments=["green", "red"], splits=["train", "OOS", "OOT"]):
     """
     Charge les données brutes, les réduit et les prétraite.
     
@@ -208,7 +208,7 @@ if __name__ == "__main__":
     # Paramètres de réduction et de traitement
     NROWS = 100000  # Charger seulement les 1000 premières lignes
     N_OVERSAMPLE = 500  # Nombre de fois que les cas de défaut seront dupliqués
-    WINDOWS = ["FM12","FM24","FM36","FM48","FM60"]  # Seulement FM12 pour commencer
+    WINDOWS = ["FM12"]  # Seulement FM12 pour commencer
     
     # Lancer le traitement avec limitation du nombre de lignes
     reduce_and_process_data(
