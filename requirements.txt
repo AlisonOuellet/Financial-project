@@ -9,3 +9,5 @@ scikit-learn
 jupytext
 nbstripout
 ydata-profiling
+xgboost
+#pyreadstat
