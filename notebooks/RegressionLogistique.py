@@ -55,10 +55,9 @@ def main():
 
         
         # Définir les splits à utiliser : train (entrainement), OOS (validation), OOT (test)
-        splits_to_process = ['train', 'OOS', 'OOT','OOU']  # 'OOT' can be added later if needed
-
+        splits_to_process = ['train', 'OOS', 'OOT','OOU']  
         # Traiter et sauvegarder les fichiers pour ces splits
-        process_and_save_all(PROJECT_PATH, windows=["FM12"], nrows=100000, segments=['red'], splits=splits_to_process)
+        process_and_save_all(PROJECT_PATH, windows=["FM12"], segments=['red'], splits=splits_to_process)
 
         # Charger chaque split séparément
         print("Chargement des données prétraitées...")
