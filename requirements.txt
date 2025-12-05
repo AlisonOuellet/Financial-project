@@ -9,4 +9,5 @@ scikit-learn
 jupytext
 nbstripout
 ydata-profiling
+xgboost
 imbalanced-learn
