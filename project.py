@@ -99,18 +99,13 @@ plt.show()
 # %%
 drift_path = os.path.join(PROJECT_PATH, "outputs", "drift")
 
-run_drift_reports_simple(
+run_drift_reports(
     data_train=data_train,
     data_oos=data_test,
     data_oot=oot_test,
     data_oou=oou_test,
     output_path=drift_path
 )
-
-# %% [markdown]
-# ### Dérive de concept
-
-# %%
 
 # %% [markdown]
 # ## Entraînement et évaluation des modèles
@@ -197,33 +192,30 @@ all_results.extend(train_and_eval(xgb_model, "XGBoost"))
 # ## Résultats
 
 # %%
-results_df = pd.DataFrame(all_results)
+import pandas as pd
 
-results_df = results_df.drop_duplicates()
+# DataFrame des résultats
+results_df = pd.DataFrame(all_results).drop_duplicates()
 
+# Pivot pour avoir chaque métrique par dataset
 pivot_df = results_df.pivot(index="Model", columns="Dataset", values=["Gini", "PR-AUC"])
-
 pivot_df.columns = [f"{metric}_{ds}" for metric, ds in pivot_df.columns]
 pivot_df = pivot_df.reset_index()
 
-robustness = pd.DataFrame()
-robustness["Model"] = pivot_df["Model"]
+# DataFrame pour robustesse (écarts entre OOS et les autres datasets)
+robustness = pivot_df.copy()  # On conserve toutes les performances
 
-gini_cols = ["Gini_OOS", "Gini_OOT", "Gini_OOU"]
-robustness["Gini_Range"] = pivot_df[gini_cols].max(axis=1) - pivot_df[gini_cols].min(axis=1)
-robustness["Gini_Std"] = pivot_df[gini_cols].std(axis=1)
-robustness["Gini_MinMax"] = pivot_df[gini_cols].min(axis=1) / pivot_df[gini_cols].max(axis=1)
-robustness["Gini_DropPct"] = (pivot_df["Gini_OOS"] - pivot_df["Gini_OOU"]) / pivot_df["Gini_OOS"]
+# Gini : écarts OOS vs OOT/OOU
+robustness["Gini_Drop_OOT"] = pivot_df["Gini_OOS"] - pivot_df["Gini_OOT"]
+robustness["Gini_Drop_OOU"] = pivot_df["Gini_OOS"] - pivot_df["Gini_OOU"]
 
-pr_cols = ["PR-AUC_OOS", "PR-AUC_OOT", "PR-AUC_OOU"]
-robustness["PRAUC_Range"] = pivot_df[pr_cols].max(axis=1) - pivot_df[pr_cols].min(axis=1)
-robustness["PRAUC_Std"] = pivot_df[pr_cols].std(axis=1)
-robustness["PRAUC_MinMax"] = pivot_df[pr_cols].min(axis=1) / pivot_df[pr_cols].max(axis=1)
-robustness["PRAUC_DropPct"] = (pivot_df["PR-AUC_OOS"] - pivot_df["PR-AUC_OOU"]) / pivot_df["PR-AUC_OOS"]
+# PR-AUC : écarts OOS vs OOT/OOU
+robustness["PR_Drop_OOT"] = pivot_df["PR-AUC_OOS"] - pivot_df["PR-AUC_OOT"]
+robustness["PR_Drop_OOU"] = pivot_df["PR-AUC_OOS"] - pivot_df["PR-AUC_OOU"]
 
-print("\n=== Pivot_df (performances par dataset) ===\n")
+print("\n=== Performances des modèles par jeu de données ===\n")
 print(pivot_df)
 
-print("\n=== Robustness metrics ===\n")
-print(robustness)
+print("\n=== Écarts entre OOS et les autres jeux de données ===\n")
+print(robustness[["Model", "Gini_Drop_OOT", "Gini_Drop_OOU", "PR_Drop_OOT", "PR_Drop_OOU"]])
 
