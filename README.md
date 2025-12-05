@@ -21,7 +21,7 @@ Ce dépôt contient le projet de session réalisé par l'équipe 12 dans le cadr
 
 ## Objectif
 
-À déterminer
+Évaluer la robustesse en situation de data drift des modèles dans une situation à débalancement élevée.
 
 ---
 
@@ -36,6 +36,8 @@ GIF-7005/
 ├── models/            # Modèles entraînés (.pkl, .pt, etc.)
 ├── outputs/           # Graphiques, résultats, logs d'expériences
 ├── environment.yml    # Dépendances Conda pour reproduire l'environnement
+├── notebooks          # Notebook utilisées lors de la recherche
+├── project.ipynb      # Notebook principal du projet
 └── README.md          # Documentation du projet
 ```
 ---
@@ -49,7 +51,7 @@ GIF-7005/
 
 2. Créer et activer l’environnement Conda :
    conda env create -f environment.yml
-   conda activate gif7005-env
+   conda activate gif7005-env-final
 
 3. Synchroniser les notebooks avec Jupytext :
 
@@ -74,6 +76,7 @@ Exemple:
 /data/raw/FM12/green/OOU.sas7bdat
 /data/raw/FM12/red/OOU.sas7bdat
 ```
+7. Exécuter le notebook project.ipynb
 
 ### Option 2 : installation avec un environnement virtuel Python (venv + pip)
 
@@ -116,7 +119,7 @@ Exemple:
 /data/raw/FM12/green/OOU.sas7bdat
 /data/raw/FM12/red/OOU.sas7bdat
 ```
-
+8. Exécuter le notebook project.ipynb
 ---
 
 ## Données
