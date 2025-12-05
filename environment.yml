@@ -19,3 +19,4 @@ dependencies:
       - jupytext
       - nbstripout
       - ydata-profiling
+      - evidently
