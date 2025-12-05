@@ -1,0 +1,616 @@
+
+Dérive pour le trimestre 2016Q2 comparé à 2016Q1:
+                   variable    type  drift_score  drift_detected    psi
+               Credit_Score numeric     0.016539           False 0.0019
+         Mortgage_Insurance numeric     0.048733           False 0.0074
+            Number_of_units numeric     0.004503           False 0.0000
+             CLoan_to_value numeric     0.051196           False 0.0155
+             Debt_to_income numeric     0.008231           False 0.0010
+             OLoan_to_value numeric     0.048840           False 0.0147
+            Single_borrower numeric     0.006231           False 0.0000
+       is_Loan_purpose_purc numeric     0.075629           False 0.0000
+       is_Loan_purpose_cash numeric     0.042312           False 0.0000
+       is_Loan_purpose_noca numeric     0.033317           False 0.0000
+    is_First_time_homeowner numeric     0.031381           False 0.0000
+ is_First_time_homeowner_No numeric     0.031381           False 0.0000
+   is_Occupancy_status_prim numeric     0.011564           False 0.0000
+   is_Occupancy_status_inve numeric     0.011051           False 0.0000
+   is_Occupancy_status_seco numeric     0.000513           False 0.0000
+is_Origination_channel_reta numeric     0.017335           False 0.0000
+is_Origination_channel_brok numeric     0.002793           False 0.0000
+is_Origination_channel_corr numeric     0.014542           False 0.0000
+ is_Origination_channel_tpo numeric     0.000000           False 0.0000
+      is_Property_type_cond numeric     0.003494           False 0.0000
+      is_Property_type_coop numeric     0.000486           False 0.0000
+      is_Property_type_manu numeric     0.000578           False 0.0000
+       is_Property_type_pud numeric     0.009340           False 0.0000
+      is_Property_type_sing numeric     0.011770           False 0.0000
+                      DFlag numeric     0.001100           False 0.0000
+
+Dérive pour le trimestre 2016Q3 comparé à 2016Q1:
+                   variable    type  drift_score  drift_detected    psi
+               Credit_Score numeric     0.027497           False 0.0045
+         Mortgage_Insurance numeric     0.031907           False 0.0006
+            Number_of_units numeric     0.004668           False 0.0000
+             CLoan_to_value numeric     0.030073           False 0.0074
+             Debt_to_income numeric     0.006804           False 0.0008
+             OLoan_to_value numeric     0.028541           False 0.0070
+            Single_borrower numeric     0.005921           False 0.0000
+       is_Loan_purpose_purc numeric     0.036005           False 0.0000
+       is_Loan_purpose_cash numeric     0.027661           False 0.0000
+       is_Loan_purpose_noca numeric     0.008344           False 0.0000
+    is_First_time_homeowner numeric     0.007262           False 0.0000
+ is_First_time_homeowner_No numeric     0.007262           False 0.0000
+   is_Occupancy_status_prim numeric     0.013413           False 0.0000
+   is_Occupancy_status_inve numeric     0.013318           False 0.0000
+   is_Occupancy_status_seco numeric     0.000095           False 0.0000
+is_Origination_channel_reta numeric     0.017734           False 0.0000
+is_Origination_channel_brok numeric     0.001307           False 0.0000
+is_Origination_channel_corr numeric     0.016427           False 0.0000
+ is_Origination_channel_tpo numeric     0.000000           False 0.0000
+      is_Property_type_cond numeric     0.005821           False 0.0000
+      is_Property_type_coop numeric     0.000310           False 0.0000
+      is_Property_type_manu numeric     0.000335           False 0.0000
+       is_Property_type_pud numeric     0.007400           False 0.0000
+      is_Property_type_sing numeric     0.012576           False 0.0000
+                      DFlag numeric     0.001572           False 0.0000
+
+Dérive pour le trimestre 2016Q4 comparé à 2016Q1:
+                   variable    type  drift_score  drift_detected    psi
+               Credit_Score numeric     0.025781           False 0.0036
+         Mortgage_Insurance numeric     0.018452           False 0.0033
+            Number_of_units numeric     0.002538           False 0.0000
+             CLoan_to_value numeric     0.016341           False 0.0096
+             Debt_to_income numeric     0.013106           False 0.0011
+             OLoan_to_value numeric     0.018650           False 0.0098
+            Single_borrower numeric     0.000075           False 0.0000
+       is_Loan_purpose_purc numeric     0.023855           False 0.0000
+       is_Loan_purpose_cash numeric     0.005235           False 0.0000
+       is_Loan_purpose_noca numeric     0.018620           False 0.0000
+    is_First_time_homeowner numeric     0.017748           False 0.0000
+ is_First_time_homeowner_No numeric     0.017748           False 0.0000
+   is_Occupancy_status_prim numeric     0.011804           False 0.0000
+   is_Occupancy_status_inve numeric     0.011817           False 0.0000
+   is_Occupancy_status_seco numeric     0.000013           False 0.0000
+is_Origination_channel_reta numeric     0.008751           False 0.0000
+is_Origination_channel_brok numeric     0.008736           False 0.0000
+is_Origination_channel_corr numeric     0.000015           False 0.0000
+ is_Origination_channel_tpo numeric     0.000000           False 0.0000
+      is_Property_type_cond numeric     0.000333           False 0.0000
+      is_Property_type_coop numeric     0.000696           False 0.0000
+      is_Property_type_manu numeric     0.000376           False 0.0000
+       is_Property_type_pud numeric     0.002326           False 0.0000
+      is_Property_type_sing numeric     0.001587           False 0.0000
+                      DFlag numeric     0.004791           False 0.0000
+
+Dérive pour le trimestre 2018Q1 comparé à 2016Q1:
+                   variable    type  drift_score  drift_detected    psi
+               Credit_Score numeric     0.014620           False 0.0020
+         Mortgage_Insurance numeric     0.039275           False 0.0054
+            Number_of_units numeric     0.001477           False 0.0000
+             CLoan_to_value numeric     0.039376           False 0.0661
+             Debt_to_income numeric     0.107081            True 0.1126
+             OLoan_to_value numeric     0.039129           False 0.0654
+            Single_borrower numeric     0.029924           False 0.0000
+       is_Loan_purpose_purc numeric     0.077230           False 0.0000
+       is_Loan_purpose_cash numeric     0.017228           False 0.0000
+       is_Loan_purpose_noca numeric     0.094458           False 0.0000
+    is_First_time_homeowner numeric     0.052096           False 0.0000
+ is_First_time_homeowner_No numeric     0.052096           False 0.0000
+   is_Occupancy_status_prim numeric     0.004417           False 0.0000
+   is_Occupancy_status_inve numeric     0.002313           False 0.0000
+   is_Occupancy_status_seco numeric     0.002104           False 0.0000
+is_Origination_channel_reta numeric     0.022605           False 0.0000
+is_Origination_channel_brok numeric     0.011889           False 0.0000
+is_Origination_channel_corr numeric     0.034473           False 0.0000
+ is_Origination_channel_tpo numeric     0.000000           False 0.0000
+      is_Property_type_cond numeric     0.001616           False 0.0000
+      is_Property_type_coop numeric     0.000486           False 0.0000
+      is_Property_type_manu numeric     0.001150           False 0.0000
+       is_Property_type_pud numeric     0.004494           False 0.0000
+      is_Property_type_sing numeric     0.006774           False 0.0000
+                      DFlag numeric     0.004260           False 0.0000
+
+Dérive pour le trimestre 2018Q2 comparé à 2016Q1:
+                   variable    type  drift_score  drift_detected    psi
+               Credit_Score numeric     0.013123           False 0.0029
+         Mortgage_Insurance numeric     0.116921            True 0.0002
+            Number_of_units numeric     0.001319           False 0.0000
+             CLoan_to_value numeric     0.113630            True 0.1516
+             Debt_to_income numeric     0.078735           False 0.0680
+             OLoan_to_value numeric     0.117641            True 0.1529
+            Single_borrower numeric     0.024695           False 0.0000
+       is_Loan_purpose_purc numeric     0.208904            True 0.0000
+       is_Loan_purpose_cash numeric     0.053993           False 0.0000
+       is_Loan_purpose_noca numeric     0.154911            True 0.0000
+    is_First_time_homeowner numeric     0.126093            True 0.0000
+ is_First_time_homeowner_No numeric     0.126093            True 0.0000
+   is_Occupancy_status_prim numeric     0.008771           False 0.0000
+   is_Occupancy_status_inve numeric     0.012614           False 0.0000
+   is_Occupancy_status_seco numeric     0.003843           False 0.0000
+is_Origination_channel_reta numeric     0.008099           False 0.0000
+is_Origination_channel_brok numeric     0.000640           False 0.0000
+is_Origination_channel_corr numeric     0.008738           False 0.0000
+ is_Origination_channel_tpo numeric     0.000000           False 0.0000
+      is_Property_type_cond numeric     0.008715           False 0.0000
+      is_Property_type_coop numeric     0.000587           False 0.0000
+      is_Property_type_manu numeric     0.001171           False 0.0000
+       is_Property_type_pud numeric     0.010322           False 0.0000
+      is_Property_type_sing numeric     0.019621           False 0.0000
+                      DFlag numeric     0.004674           False 0.0000
+
+Dérive pour le trimestre 2018Q3 comparé à 2016Q1:
+                   variable    type  drift_score  drift_detected    psi
+               Credit_Score numeric     0.026067           False 0.0064
+         Mortgage_Insurance numeric     0.118632            True 0.0023
+            Number_of_units numeric     0.002299           False 0.0000
+             CLoan_to_value numeric     0.114990            True 0.1569
+             Debt_to_income numeric     0.073074           False 0.0614
+             OLoan_to_value numeric     0.119252            True 0.1587
+            Single_borrower numeric     0.022408           False 0.0000
+       is_Loan_purpose_purc numeric     0.215185            True 0.0000
+       is_Loan_purpose_cash numeric     0.048739           False 0.0000
+       is_Loan_purpose_noca numeric     0.166446            True 0.0000
+    is_First_time_homeowner numeric     0.125885            True 0.0000
+ is_First_time_homeowner_No numeric     0.125885            True 0.0000
+   is_Occupancy_status_prim numeric     0.010747           False 0.0000
+   is_Occupancy_status_inve numeric     0.014670           False 0.0000
+   is_Occupancy_status_seco numeric     0.003923           False 0.0000
+is_Origination_channel_reta numeric     0.010529           False 0.0000
+is_Origination_channel_brok numeric     0.004804           False 0.0000
+is_Origination_channel_corr numeric     0.005725           False 0.0000
+ is_Origination_channel_tpo numeric     0.000000           False 0.0000
+      is_Property_type_cond numeric     0.004896           False 0.0000
+      is_Property_type_coop numeric     0.000569           False 0.0000
+      is_Property_type_manu numeric     0.001497           False 0.0000
+       is_Property_type_pud numeric     0.001123           False 0.0000
+      is_Property_type_sing numeric     0.004701           False 0.0000
+                      DFlag numeric     0.004805           False 0.0000
+
+Dérive pour le trimestre 2018Q4 comparé à 2016Q1:
+                   variable    type  drift_score  drift_detected    psi
+               Credit_Score numeric     0.030016           False 0.0079
+         Mortgage_Insurance numeric     0.078653           False 0.0078
+            Number_of_units numeric     0.002419           False 0.0000
+             CLoan_to_value numeric     0.075964           False 0.1038
+             Debt_to_income numeric     0.082012           False 0.0740
+             OLoan_to_value numeric     0.078993           False 0.1035
+            Single_borrower numeric     0.027512           False 0.0000
+       is_Loan_purpose_purc numeric     0.172055            True 0.0000
+       is_Loan_purpose_cash numeric     0.009908           False 0.0000
+       is_Loan_purpose_noca numeric     0.162146            True 0.0000
+    is_First_time_homeowner numeric     0.100978            True 0.0000
+ is_First_time_homeowner_No numeric     0.100978            True 0.0000
+   is_Occupancy_status_prim numeric     0.004776           False 0.0000
+   is_Occupancy_status_inve numeric     0.001884           False 0.0000
+   is_Occupancy_status_seco numeric     0.006660           False 0.0000
+is_Origination_channel_reta numeric     0.022286           False 0.0000
+is_Origination_channel_brok numeric     0.004084           False 0.0000
+is_Origination_channel_corr numeric     0.018202           False 0.0000
+ is_Origination_channel_tpo numeric     0.000000           False 0.0000
+      is_Property_type_cond numeric     0.004492           False 0.0000
+      is_Property_type_coop numeric     0.000127           False 0.0000
+      is_Property_type_manu numeric     0.001967           False 0.0000
+       is_Property_type_pud numeric     0.014430           False 0.0000
+      is_Property_type_sing numeric     0.008097           False 0.0000
+                      DFlag numeric     0.004725           False 0.0000
+
+Dérive pour le trimestre 2019Q1 comparé à 2016Q1:
+                   variable    type  drift_score  drift_detected    psi
+               Credit_Score numeric     0.019882           False 0.0041
+         Mortgage_Insurance numeric     0.075702           False 0.0117
+            Number_of_units numeric     0.002244           False 0.0000
+             CLoan_to_value numeric     0.074260           False 0.1005
+             Debt_to_income numeric     0.060378           False 0.0447
+             OLoan_to_value numeric     0.077389           False 0.1118
+            Single_borrower numeric     0.028568           False 0.0000
+       is_Loan_purpose_purc numeric     0.125827            True 0.0000
+       is_Loan_purpose_cash numeric     0.001578           False 0.0000
+       is_Loan_purpose_noca numeric     0.124249            True 0.0000
+    is_First_time_homeowner numeric     0.094868           False 0.0000
+ is_First_time_homeowner_No numeric     0.094868           False 0.0000
+   is_Occupancy_status_prim numeric     0.000392           False 0.0000
+   is_Occupancy_status_inve numeric     0.004984           False 0.0000
+   is_Occupancy_status_seco numeric     0.005376           False 0.0000
+is_Origination_channel_reta numeric     0.037369           False 0.0000
+is_Origination_channel_brok numeric     0.016558           False 0.0000
+is_Origination_channel_corr numeric     0.020811           False 0.0000
+ is_Origination_channel_tpo numeric     0.000000           False 0.0000
+      is_Property_type_cond numeric     0.005104           False 0.0000
+      is_Property_type_coop numeric     0.000231           False 0.0000
+      is_Property_type_manu numeric     0.002306           False 0.0000
+       is_Property_type_pud numeric     0.005437           False 0.0000
+      is_Property_type_sing numeric     0.002204           False 0.0000
+                      DFlag numeric     0.004896           False 0.0000
+
+Dérive pour le trimestre 2019Q2 comparé à 2016Q1:
+                   variable    type  drift_score  drift_detected    psi
+               Credit_Score numeric     0.014720           False 0.0023
+         Mortgage_Insurance numeric     0.115382            True 0.0136
+            Number_of_units numeric     0.001433           False 0.0000
+             CLoan_to_value numeric     0.107107            True 0.1248
+             Debt_to_income numeric     0.049223           False 0.0317
+             OLoan_to_value numeric     0.113775            True 0.1431
+            Single_borrower numeric     0.026707           False 0.0000
+       is_Loan_purpose_purc numeric     0.146296            True 0.0000
+       is_Loan_purpose_cash numeric     0.047808           False 0.0000
+       is_Loan_purpose_noca numeric     0.098489           False 0.0000
+    is_First_time_homeowner numeric     0.100151            True 0.0000
+ is_First_time_homeowner_No numeric     0.100151            True 0.0000
+   is_Occupancy_status_prim numeric     0.013461           False 0.0000
+   is_Occupancy_status_inve numeric     0.016534           False 0.0000
+   is_Occupancy_status_seco numeric     0.003073           False 0.0000
+is_Origination_channel_reta numeric     0.083233           False 0.0000
+is_Origination_channel_brok numeric     0.022055           False 0.0000
+is_Origination_channel_corr numeric     0.061179           False 0.0000
+ is_Origination_channel_tpo numeric     0.000000           False 0.0000
+      is_Property_type_cond numeric     0.012098           False 0.0000
+      is_Property_type_coop numeric     0.000529           False 0.0000
+      is_Property_type_manu numeric     0.002064           False 0.0000
+       is_Property_type_pud numeric     0.001178           False 0.0000
+      is_Property_type_sing numeric     0.012455           False 0.0000
+                      DFlag numeric     0.030397           False 0.0000
+
+Dérive pour le trimestre 2019Q3 comparé à 2016Q1:
+                   variable    type  drift_score  drift_detected    psi
+               Credit_Score numeric     0.046884           False 0.0100
+         Mortgage_Insurance numeric     0.082086           False 0.0124
+            Number_of_units numeric     0.003464           False 0.0000
+             CLoan_to_value numeric     0.071497           False 0.0676
+             Debt_to_income numeric     0.035842           False 0.0180
+             OLoan_to_value numeric     0.080188           False 0.0840
+            Single_borrower numeric     0.019719           False 0.0000
+       is_Loan_purpose_purc numeric     0.063225           False 0.0000
+       is_Loan_purpose_cash numeric     0.046372           False 0.0000
+       is_Loan_purpose_noca numeric     0.016854           False 0.0000
+    is_First_time_homeowner numeric     0.043250           False 0.0000
+ is_First_time_homeowner_No numeric     0.043250           False 0.0000
+   is_Occupancy_status_prim numeric     0.016741           False 0.0000
+   is_Occupancy_status_inve numeric     0.020763           False 0.0000
+   is_Occupancy_status_seco numeric     0.004022           False 0.0000
+is_Origination_channel_reta numeric     0.074257           False 0.0000
+is_Origination_channel_brok numeric     0.008277           False 0.0000
+is_Origination_channel_corr numeric     0.065980           False 0.0000
+ is_Origination_channel_tpo numeric     0.000000           False 0.0000
+      is_Property_type_cond numeric     0.008726           False 0.0000
+      is_Property_type_coop numeric     0.000566           False 0.0000
+      is_Property_type_manu numeric     0.001443           False 0.0000
+       is_Property_type_pud numeric     0.004357           False 0.0000
+      is_Property_type_sing numeric     0.005246           False 0.0000
+                      DFlag numeric     0.053928           False 0.0000
+
+Dérive pour le trimestre 2019Q4 comparé à 2016Q1:
+                   variable    type  drift_score  drift_detected    psi
+               Credit_Score numeric     0.043514           False 0.0086
+         Mortgage_Insurance numeric     0.030954           False 0.0135
+            Number_of_units numeric     0.002372           False 0.0000
+             CLoan_to_value numeric     0.028124           False 0.0262
+             Debt_to_income numeric     0.041638           False 0.0214
+             OLoan_to_value numeric     0.030294           False 0.0384
+            Single_borrower numeric     0.022739           False 0.0000
+       is_Loan_purpose_purc numeric     0.026609           False 0.0000
+       is_Loan_purpose_cash numeric     0.003221           False 0.0000
+       is_Loan_purpose_noca numeric     0.023388           False 0.0000
+    is_First_time_homeowner numeric     0.003548           False 0.0000
+ is_First_time_homeowner_No numeric     0.003548           False 0.0000
+   is_Occupancy_status_prim numeric     0.015700           False 0.0000
+   is_Occupancy_status_inve numeric     0.018759           False 0.0000
+   is_Occupancy_status_seco numeric     0.003060           False 0.0000
+is_Origination_channel_reta numeric     0.060393           False 0.0000
+is_Origination_channel_brok numeric     0.003241           False 0.0000
+is_Origination_channel_corr numeric     0.057145           False 0.0000
+ is_Origination_channel_tpo numeric     0.000000           False 0.0000
+      is_Property_type_cond numeric     0.002143           False 0.0000
+      is_Property_type_coop numeric     0.000526           False 0.0000
+      is_Property_type_manu numeric     0.001661           False 0.0000
+       is_Property_type_pud numeric     0.005990           False 0.0000
+      is_Property_type_sing numeric     0.002712           False 0.0000
+                      DFlag numeric     0.057184           False 0.0000
+
+Dérive pour le trimestre 2016Q2 comparé à 2016Q1:
+                   variable        type  drift_score  drift_detected      psi
+               Credit_Score     numeric     0.016539           False 0.001939
+         Mortgage_Insurance     numeric     0.048733           False 0.007377
+            Number_of_units     numeric     0.004503           False 0.000000
+             CLoan_to_value     numeric     0.051196           False 0.015543
+             Debt_to_income     numeric     0.008231           False 0.000998
+             OLoan_to_value     numeric     0.048840           False 0.014652
+            Single_borrower categorical     0.004407           False 0.000155
+       is_Loan_purpose_purc categorical     0.053600           False 0.023006
+       is_Loan_purpose_cash categorical     0.033352           False 0.008906
+       is_Loan_purpose_noca categorical     0.027192           False 0.005919
+    is_First_time_homeowner categorical     0.027179           False 0.005914
+ is_First_time_homeowner_No categorical     0.027179           False 0.005914
+   is_Occupancy_status_prim categorical     0.014728           False 0.001737
+   is_Occupancy_status_inve categorical     0.016308           False 0.002130
+   is_Occupancy_status_seco categorical     0.001210           False 0.000012
+is_Origination_channel_reta categorical     0.012461           False 0.001242
+is_Origination_channel_brok categorical     0.003222           False 0.000083
+is_Origination_channel_corr categorical     0.011166           False 0.000998
+ is_Origination_channel_tpo categorical     0.000000           False 0.000000
+      is_Property_type_cond categorical     0.004930           False 0.000194
+      is_Property_type_coop categorical     0.004750           False 0.000182
+      is_Property_type_manu categorical     0.003357           False 0.000090
+       is_Property_type_pud categorical     0.007545           False 0.000455
+      is_Property_type_sing categorical     0.008846           False 0.000626
+                      DFlag categorical     0.004037           False 0.000130
+
+Dérive pour le trimestre 2016Q3 comparé à 2016Q1:
+                   variable        type  drift_score  drift_detected      psi
+               Credit_Score     numeric     0.027497           False 0.004512
+         Mortgage_Insurance     numeric     0.031907           False 0.000611
+            Number_of_units     numeric     0.004668           False 0.000000
+             CLoan_to_value     numeric     0.030073           False 0.007353
+             Debt_to_income     numeric     0.006804           False 0.000809
+             OLoan_to_value     numeric     0.028541           False 0.007011
+            Single_borrower categorical     0.004187           False 0.000140
+       is_Loan_purpose_purc categorical     0.025589           False 0.005240
+       is_Loan_purpose_cash categorical     0.021629           False 0.003744
+       is_Loan_purpose_noca categorical     0.006701           False 0.000359
+    is_First_time_homeowner categorical     0.006426           False 0.000330
+ is_First_time_homeowner_No categorical     0.006426           False 0.000330
+   is_Occupancy_status_prim categorical     0.017172           False 0.002361
+   is_Occupancy_status_inve categorical     0.019832           False 0.003153
+   is_Occupancy_status_seco categorical     0.000223           False 0.000000
+is_Origination_channel_reta categorical     0.012748           False 0.001300
+is_Origination_channel_brok categorical     0.001513           False 0.000018
+is_Origination_channel_corr categorical     0.012603           False 0.001271
+ is_Origination_channel_tpo categorical     0.000000           False 0.000000
+      is_Property_type_cond categorical     0.008149           False 0.000531
+      is_Property_type_coop categorical     0.002926           False 0.000069
+      is_Property_type_manu categorical     0.001912           False 0.000029
+       is_Property_type_pud categorical     0.005985           False 0.000287
+      is_Property_type_sing categorical     0.009449           False 0.000714
+                      DFlag categorical     0.005701           False 0.000260
+
+Dérive pour le trimestre 2016Q4 comparé à 2016Q1:
+                   variable        type  drift_score  drift_detected      psi
+               Credit_Score     numeric     0.025781           False 0.003568
+         Mortgage_Insurance     numeric     0.018452           False 0.003254
+            Number_of_units     numeric     0.002538           False 0.000000
+             CLoan_to_value     numeric     0.016341           False 0.009620
+             Debt_to_income     numeric     0.013106           False 0.001104
+             OLoan_to_value     numeric     0.018650           False 0.009824
+            Single_borrower categorical     0.000053           False 0.000000
+       is_Loan_purpose_purc categorical     0.017087           False 0.002336
+       is_Loan_purpose_cash categorical     0.004027           False 0.000130
+       is_Loan_purpose_noca categorical     0.014720           False 0.001734
+    is_First_time_homeowner categorical     0.016098           False 0.002074
+ is_First_time_homeowner_No categorical     0.016098           False 0.002074
+   is_Occupancy_status_prim categorical     0.015045           False 0.001812
+   is_Occupancy_status_inve categorical     0.017492           False 0.002451
+   is_Occupancy_status_seco categorical     0.000030           False 0.000000
+is_Origination_channel_reta categorical     0.006323           False 0.000320
+is_Origination_channel_brok categorical     0.010336           False 0.000855
+is_Origination_channel_corr categorical     0.000012           False 0.000000
+ is_Origination_channel_tpo categorical     0.000000           False 0.000000
+      is_Property_type_cond categorical     0.000474           False 0.000002
+      is_Property_type_coop categorical     0.007117           False 0.000411
+      is_Property_type_manu categorical     0.002155           False 0.000037
+       is_Property_type_pud categorical     0.001887           False 0.000028
+      is_Property_type_sing categorical     0.001197           False 0.000011
+                      DFlag categorical     0.016143           False 0.002101
+
+Dérive pour le trimestre 2018Q1 comparé à 2016Q1:
+                   variable        type  drift_score  drift_detected      psi
+               Credit_Score     numeric     0.014620           False 0.002047
+         Mortgage_Insurance     numeric     0.039275           False 0.005362
+            Number_of_units     numeric     0.001477           False 0.000000
+             CLoan_to_value     numeric     0.039376           False 0.066122
+             Debt_to_income     numeric     0.107081            True 0.112604
+             OLoan_to_value     numeric     0.039129           False 0.065426
+            Single_borrower categorical     0.021165           False 0.003584
+       is_Loan_purpose_purc categorical     0.054731           False 0.023988
+       is_Loan_purpose_cash categorical     0.013180           False 0.001390
+       is_Loan_purpose_noca categorical     0.080874           False 0.052655
+    is_First_time_homeowner categorical     0.044371           False 0.015779
+ is_First_time_homeowner_No categorical     0.044371           False 0.015779
+   is_Occupancy_status_prim categorical     0.005398           False 0.000233
+   is_Occupancy_status_inve categorical     0.003250           False 0.000085
+   is_Occupancy_status_seco categorical     0.004833           False 0.000187
+is_Origination_channel_reta categorical     0.016235           False 0.002109
+is_Origination_channel_brok categorical     0.014170           False 0.001607
+is_Origination_channel_corr categorical     0.026241           False 0.005511
+ is_Origination_channel_tpo categorical     0.000000           False 0.000000
+      is_Property_type_cond categorical     0.002294           False 0.000042
+      is_Property_type_coop categorical     0.004749           False 0.000181
+      is_Property_type_manu categorical     0.006024           False 0.000291
+       is_Property_type_pud categorical     0.003642           False 0.000106
+      is_Property_type_sing categorical     0.005101           False 0.000208
+                      DFlag categorical     0.014515           False 0.001696
+
+Dérive pour le trimestre 2018Q2 comparé à 2016Q1:
+                   variable        type  drift_score  drift_detected      psi
+               Credit_Score     numeric     0.013123           False 0.002899
+         Mortgage_Insurance     numeric     0.116921            True 0.000239
+            Number_of_units     numeric     0.001319           False 0.000000
+             CLoan_to_value     numeric     0.113630            True 0.151623
+             Debt_to_income     numeric     0.078735           False 0.067971
+             OLoan_to_value     numeric     0.117641            True 0.152932
+            Single_borrower categorical     0.017465           False 0.002440
+       is_Loan_purpose_purc categorical     0.148680            True 0.178207
+       is_Loan_purpose_cash categorical     0.042850           False 0.014707
+       is_Loan_purpose_noca categorical     0.141379            True 0.164003
+    is_First_time_homeowner categorical     0.102179            True 0.084188
+ is_First_time_homeowner_No categorical     0.102179            True 0.084188
+   is_Occupancy_status_prim categorical     0.011087           False 0.000984
+   is_Occupancy_status_inve categorical     0.018730           False 0.002811
+   is_Occupancy_status_seco categorical     0.008679           False 0.000603
+is_Origination_channel_reta categorical     0.005832           False 0.000272
+is_Origination_channel_brok categorical     0.000744           False 0.000004
+is_Origination_channel_corr categorical     0.006728           False 0.000362
+ is_Origination_channel_tpo categorical     0.000000           False 0.000000
+      is_Property_type_cond categorical     0.012084           False 0.001169
+      is_Property_type_coop categorical     0.005865           False 0.000278
+      is_Property_type_manu categorical     0.006131           False 0.000301
+       is_Property_type_pud categorical     0.008334           False 0.000556
+      is_Property_type_sing categorical     0.014704           False 0.001730
+                      DFlag categorical     0.015788           False 0.002009
+
+Dérive pour le trimestre 2018Q3 comparé à 2016Q1:
+                   variable        type  drift_score  drift_detected      psi
+               Credit_Score     numeric     0.026067           False 0.006382
+         Mortgage_Insurance     numeric     0.118632            True 0.002346
+            Number_of_units     numeric     0.002299           False 0.000000
+             CLoan_to_value     numeric     0.114990            True 0.156872
+             Debt_to_income     numeric     0.073074           False 0.061390
+             OLoan_to_value     numeric     0.119252            True 0.158659
+            Single_borrower categorical     0.015846           False 0.002009
+       is_Loan_purpose_purc categorical     0.153263            True 0.189462
+       is_Loan_purpose_cash categorical     0.038561           False 0.011907
+       is_Loan_purpose_noca categorical     0.154193            True 0.196406
+    is_First_time_homeowner categorical     0.102023            True 0.083930
+ is_First_time_homeowner_No categorical     0.102023            True 0.083930
+   is_Occupancy_status_prim categorical     0.013657           False 0.001493
+   is_Occupancy_status_inve categorical     0.021968           False 0.003870
+   is_Occupancy_status_seco categorical     0.008855           False 0.000628
+is_Origination_channel_reta categorical     0.007579           False 0.000460
+is_Origination_channel_brok categorical     0.005520           False 0.000244
+is_Origination_channel_corr categorical     0.004414           False 0.000156
+ is_Origination_channel_tpo categorical     0.000000           False 0.000000
+      is_Property_type_cond categorical     0.006875           False 0.000378
+      is_Property_type_coop categorical     0.005662           False 0.000259
+      is_Property_type_manu categorical     0.007707           False 0.000477
+       is_Property_type_pud categorical     0.000914           False 0.000007
+      is_Property_type_sing categorical     0.003543           False 0.000100
+                      DFlag categorical     0.016186           False 0.002112
+
+Dérive pour le trimestre 2018Q4 comparé à 2016Q1:
+                   variable        type  drift_score  drift_detected      psi
+               Credit_Score     numeric     0.030016           False 0.007907
+         Mortgage_Insurance     numeric     0.078653           False 0.007838
+            Number_of_units     numeric     0.002419           False 0.000000
+             CLoan_to_value     numeric     0.075964           False 0.103759
+             Debt_to_income     numeric     0.082012           False 0.073980
+             OLoan_to_value     numeric     0.078993           False 0.103521
+            Single_borrower categorical     0.019458           False 0.003029
+       is_Loan_purpose_purc categorical     0.122048            True 0.119769
+       is_Loan_purpose_cash categorical     0.007677           False 0.000472
+       is_Loan_purpose_noca categorical     0.149356            True 0.183779
+    is_First_time_homeowner categorical     0.083092           False 0.055544
+ is_First_time_homeowner_No categorical     0.083092           False 0.055544
+   is_Occupancy_status_prim categorical     0.005832           False 0.000272
+   is_Occupancy_status_inve categorical     0.002687           False 0.000058
+   is_Occupancy_status_seco categorical     0.014661           False 0.001724
+is_Origination_channel_reta categorical     0.016007           False 0.002050
+is_Origination_channel_brok categorical     0.004700           False 0.000177
+is_Origination_channel_corr categorical     0.013953           False 0.001558
+ is_Origination_channel_tpo categorical     0.000000           False 0.000000
+      is_Property_type_cond categorical     0.006316           False 0.000319
+      is_Property_type_coop categorical     0.001158           False 0.000011
+      is_Property_type_manu categorical     0.009897           False 0.000789
+       is_Property_type_pud categorical     0.011841           False 0.001122
+      is_Property_type_sing categorical     0.006134           False 0.000301
+                      DFlag categorical     0.015944           False 0.002049
+
+Dérive pour le trimestre 2019Q1 comparé à 2016Q1:
+                   variable        type  drift_score  drift_detected      psi
+               Credit_Score     numeric     0.019882           False 0.004082
+         Mortgage_Insurance     numeric     0.075702           False 0.011651
+            Number_of_units     numeric     0.002244           False 0.000000
+             CLoan_to_value     numeric     0.074260           False 0.100505
+             Debt_to_income     numeric     0.060378           False 0.044748
+             OLoan_to_value     numeric     0.077389           False 0.111799
+            Single_borrower categorical     0.020205           False 0.003266
+       is_Loan_purpose_purc categorical     0.089095           False 0.063673
+       is_Loan_purpose_cash categorical     0.001218           False 0.000012
+       is_Loan_purpose_noca categorical     0.109496            True 0.097177
+    is_First_time_homeowner categorical     0.078374           False 0.049389
+ is_First_time_homeowner_No categorical     0.078374           False 0.049389
+   is_Occupancy_status_prim categorical     0.000484           False 0.000002
+   is_Occupancy_status_inve categorical     0.007187           False 0.000413
+   is_Occupancy_status_seco categorical     0.011972           False 0.001149
+is_Origination_channel_reta categorical     0.026772           False 0.005735
+is_Origination_channel_brok categorical     0.018586           False 0.002766
+is_Origination_channel_corr categorical     0.015935           False 0.002032
+ is_Origination_channel_tpo categorical     0.000000           False 0.000000
+      is_Property_type_cond categorical     0.007162           False 0.000410
+      is_Property_type_coop categorical     0.001996           False 0.000032
+      is_Property_type_manu categorical     0.011421           False 0.001052
+       is_Property_type_pud categorical     0.004434           False 0.000157
+      is_Property_type_sing categorical     0.001662           False 0.000022
+                      DFlag categorical     0.016463           False 0.002186
+
+Dérive pour le trimestre 2019Q2 comparé à 2016Q1:
+                   variable        type  drift_score  drift_detected      psi
+               Credit_Score     numeric     0.014720           False 0.002268
+         Mortgage_Insurance     numeric     0.115382            True 0.013544
+            Number_of_units     numeric     0.001433           False 0.000000
+             CLoan_to_value     numeric     0.107107            True 0.124815
+             Debt_to_income     numeric     0.049223           False 0.031718
+             OLoan_to_value     numeric     0.113775            True 0.143086
+            Single_borrower categorical     0.018888           False 0.002854
+       is_Loan_purpose_purc categorical     0.103639            True 0.086239
+       is_Loan_purpose_cash categorical     0.037803           False 0.011444
+       is_Loan_purpose_noca categorical     0.084634           False 0.057706
+    is_First_time_homeowner categorical     0.082456           False 0.054693
+ is_First_time_homeowner_No categorical     0.082456           False 0.054693
+   is_Occupancy_status_prim categorical     0.017235           False 0.002379
+   is_Occupancy_status_inve categorical     0.024952           False 0.004997
+   is_Occupancy_status_seco categorical     0.006992           False 0.000391
+is_Origination_channel_reta categorical     0.059278           False 0.028146
+is_Origination_channel_brok categorical     0.024502           False 0.004809
+is_Origination_channel_corr categorical     0.046081           False 0.017006
+ is_Origination_channel_tpo categorical     0.000000           False 0.000000
+      is_Property_type_cond categorical     0.016595           False 0.002206
+      is_Property_type_coop categorical     0.005215           False 0.000219
+      is_Property_type_manu categorical     0.010337           False 0.000861
+       is_Property_type_pud categorical     0.000958           False 0.000007
+      is_Property_type_sing categorical     0.009358           False 0.000701
+                      DFlag categorical     0.072894           False 0.046294
+
+Dérive pour le trimestre 2019Q3 comparé à 2016Q1:
+                   variable        type  drift_score  drift_detected      psi
+               Credit_Score     numeric     0.046884           False 0.010025
+         Mortgage_Insurance     numeric     0.082086           False 0.012370
+            Number_of_units     numeric     0.003464           False 0.000000
+             CLoan_to_value     numeric     0.071497           False 0.067583
+             Debt_to_income     numeric     0.035842           False 0.018008
+             OLoan_to_value     numeric     0.080188           False 0.084046
+            Single_borrower categorical     0.013944           False 0.001556
+       is_Loan_purpose_purc categorical     0.044839           False 0.016096
+       is_Loan_purpose_cash categorical     0.036638           False 0.010748
+       is_Loan_purpose_noca categorical     0.013607           False 0.001481
+    is_First_time_homeowner categorical     0.037094           False 0.011022
+ is_First_time_homeowner_No categorical     0.037094           False 0.011022
+   is_Occupancy_status_prim categorical     0.021638           False 0.003752
+   is_Occupancy_status_inve categorical     0.031916           False 0.008194
+   is_Occupancy_status_seco categorical     0.009068           False 0.000659
+is_Origination_channel_reta categorical     0.052936           False 0.022440
+is_Origination_channel_brok categorical     0.009443           False 0.000713
+is_Origination_channel_corr categorical     0.049609           False 0.019713
+ is_Origination_channel_tpo categorical     0.000000           False 0.000000
+      is_Property_type_cond categorical     0.012099           False 0.001172
+      is_Property_type_coop categorical     0.005621           False 0.000255
+      is_Property_type_manu categorical     0.007447           False 0.000445
+       is_Property_type_pud categorical     0.003551           False 0.000101
+      is_Property_type_sing categorical     0.003953           False 0.000125
+                      DFlag categorical     0.108721            True 0.108814
+
+Dérive pour le trimestre 2019Q4 comparé à 2016Q1:
+                   variable        type  drift_score  drift_detected      psi
+               Credit_Score     numeric     0.043514           False 0.008611
+         Mortgage_Insurance     numeric     0.030954           False 0.013459
+            Number_of_units     numeric     0.002372           False 0.000000
+             CLoan_to_value     numeric     0.028124           False 0.026247
+             Debt_to_income     numeric     0.041638           False 0.021431
+             OLoan_to_value     numeric     0.030294           False 0.038381
+            Single_borrower categorical     0.016081           False 0.002069
+       is_Loan_purpose_purc categorical     0.019068           False 0.002909
+       is_Loan_purpose_cash categorical     0.002480           False 0.000049
+       is_Loan_purpose_noca categorical     0.018441           False 0.002721
+    is_First_time_homeowner categorical     0.003172           False 0.000080
+ is_First_time_homeowner_No categorical     0.003172           False 0.000080
+   is_Occupancy_status_prim categorical     0.020231           False 0.003279
+   is_Occupancy_status_inve categorical     0.028582           False 0.006564
+   is_Occupancy_status_seco categorical     0.006962           False 0.000388
+is_Origination_channel_reta categorical     0.043124           False 0.014887
+is_Origination_channel_brok categorical     0.003737           False 0.000112
+is_Origination_channel_corr categorical     0.043108           False 0.014880
+ is_Origination_channel_tpo categorical     0.000000           False 0.000000
+      is_Property_type_cond categorical     0.003037           False 0.000074
+      is_Property_type_coop categorical     0.005184           False 0.000217
+      is_Property_type_manu categorical     0.008482           False 0.000578
+       is_Property_type_pud categorical     0.004887           False 0.000191
+      is_Property_type_sing categorical     0.002050           False 0.000034
+                      DFlag categorical     0.113080            True 0.118475
