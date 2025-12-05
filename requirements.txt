@@ -9,3 +9,4 @@ scikit-learn
 jupytext
 nbstripout
 ydata-profiling
+imbalanced-learn
