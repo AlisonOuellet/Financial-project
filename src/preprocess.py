@@ -61,9 +61,9 @@ def preprocess(data):
 
     data = impute_missing_data(data)
 
-    feature_cols = [col for col in data.columns if col != "DFlag"]
+    numeric_cols = ["Credit_Score", "Number_of_units"]
     scaler = StandardScaler()
-    data[feature_cols] = scaler.fit_transform(data[feature_cols])
+    data[numeric_cols] = scaler.fit_transform(data[numeric_cols])
 
     return data
 

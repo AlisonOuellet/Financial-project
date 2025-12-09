@@ -1,4 +1,4 @@
-name: gif7005-env
+name: gif7005-env-final
 channels:
   - conda-forge
   - defaults
@@ -12,8 +12,11 @@ dependencies:
   - matplotlib
   - scikit-learn
   - seaborn
+  - imbalanced-learn
+  - xgboost
   - pip
   - pip:
       - jupytext
       - nbstripout
       - ydata-profiling
+      - evidently
