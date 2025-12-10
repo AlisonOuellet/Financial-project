@@ -70,10 +70,10 @@ X_oou_test, y_oou_test = oou_test.drop(columns=['DFlag']), oou_test['DFlag']
 # %%
 from explore_data import *
 
-# save_path = os.path.join(PROJECT_PATH, "outputs", "exploration", "rapport_FM12.html")
+save_path = os.path.join(PROJECT_PATH, "outputs", "exploration", "rapport_FM12.html")
 
-# data_to_explore = load_processed_data(PROJECT_PATH, windows=["FM12"], segments=['red'])
-# summarize_data_to_html(data_to_explore, "FM12 - Rapport", save_path)
+data_to_explore = load_processed_data(PROJECT_PATH, windows=["FM12"], segments=['red'])
+summarize_data_to_html(data_to_explore, "FM12 - Rapport", save_path)
 
 get_drift(data_train, data_test, oot_test, oou_test, "outputs/drift.png")
 
@@ -117,24 +117,43 @@ import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import roc_auc_score, average_precision_score
 
+from sklearn.metrics import roc_auc_score, average_precision_score, brier_score_loss, roc_curve
+
 def train_and_eval(model, model_name):
     model.fit(X_train, y_train)
     results = []
+
     for name, (X_eval, y_eval) in {
         'OOS': (X_test, y_test),
         'OOT': (X_oot_test, y_oot_test),
         'OOU': (X_oou_test, y_oou_test)
     }.items():
+
         y_proba = model.predict_proba(X_eval)[:, 1]
-        gini = 2 * roc_auc_score(y_eval, y_proba) - 1
+
+        # Discrimination
+        auc = roc_auc_score(y_eval, y_proba)
+        gini = 2 * auc - 1
         pr_auc = average_precision_score(y_eval, y_proba)
+
+        # Calibration
+        brier = brier_score_loss(y_eval, y_proba)
+
+        # KS
+        fpr, tpr, _ = roc_curve(y_eval, y_proba)
+        ks = max(tpr - fpr)
+
         results.append({
             'Model': model_name,
             'Dataset': name,
             'Gini': gini,
-            'PR-AUC': pr_auc
+            'PR-AUC': pr_auc,
+            'KS': ks,
+            'Brier': brier
         })
+
     return results
+
 
 all_results = []
 
@@ -147,13 +166,16 @@ log_reg = LogisticRegression(
     max_iter=3000, random_state=42
 )
 
-all_results.extend(train_and_eval(log_reg, "LogisticRegression"))
+log_reg_model_cal = CalibratedClassifierCV(log_reg, method='isotonic', cv=3)
+
+all_results.extend(train_and_eval(log_reg_model_cal, "LogisticRegression"))
 
 # %% [markdown]
 # ### Random Forest
 
 # %%
 from imblearn.ensemble import BalancedRandomForestClassifier
+from sklearn.calibration import CalibratedClassifierCV
 
 rf_model = BalancedRandomForestClassifier(
     n_estimators=100,
@@ -166,7 +188,9 @@ rf_model = BalancedRandomForestClassifier(
     bootstrap=True
 )
 
-all_results.extend(train_and_eval(rf_model, "BalancedRandomForest"))
+rf_model_cal = CalibratedClassifierCV(rf_model, method='isotonic', cv=3)
+
+all_results.extend(train_and_eval(rf_model_cal, "BalancedRandomForest"))
 
 
 # %% [markdown]
@@ -188,7 +212,9 @@ xgb_model = xgb.XGBClassifier(
     tree_method='hist'
 )
 
-all_results.extend(train_and_eval(xgb_model, "XGBoost"))
+xgb_model_cal = CalibratedClassifierCV(xgb_model, method='isotonic', cv=3)
+
+all_results.extend(train_and_eval(xgb_model_cal, "XGBoost"))
 
 # %% [markdown]
 # ## Résultats
@@ -200,7 +226,7 @@ import pandas as pd
 results_df = pd.DataFrame(all_results).drop_duplicates()
 
 # Pivot pour avoir chaque métrique par dataset
-pivot_df = results_df.pivot(index="Model", columns="Dataset", values=["Gini", "PR-AUC"])
+pivot_df = results_df.pivot(index="Model", columns="Dataset", values=["Gini", "PR-AUC", "Brier"])
 pivot_df.columns = [f"{metric}_{ds}" for metric, ds in pivot_df.columns]
 pivot_df = pivot_df.reset_index()
 
