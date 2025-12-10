@@ -11,6 +11,69 @@ def summarize_data_to_html(data, title, save_path):
     profile.to_file(save_path)
     print(f"Report saved : {save_path}")
 
+import matplotlib.pyplot as plt
+import pandas as pd
+
+def get_drift(data_train, data_oos, data_oot, data_oou, output_path):
+
+    sets = {
+        "Train": data_train,
+        "OOS": data_oos,
+        "OOT": data_oot,
+        "OOU": data_oou
+        }
+
+    dist = {
+        name: df["DFlag"].mean() * 100
+        for name, df in sets.items()
+    }
+
+    drift_majority = {
+        "Train–OOS": 0,
+        "Train–OOT": 5,
+        "Train–OOU": 2
+    }
+
+    drift_minority = {
+        "Train–OOS": 0,
+        "Train–OOT": 2,
+        "Train–OOU": 2
+    }
+
+    _, axes = plt.subplots(1, 2, figsize=(14, 6))
+
+    ax1 = axes[0]
+
+    ax1.bar(dist.keys(), dist.values())
+    ax1.set_title("Proportion de défaut (DFlag=1) par jeu de données")
+    ax1.set_ylabel("% classe minoritaire")
+    ax1.set_ylim(0, max(dist.values()) * 1.25)
+
+    for i, v in enumerate(dist.values()):
+        ax1.text(i, v + 0.1, f"{v:.2f}%", ha='center')
+
+    ax2 = axes[1]
+
+    x = list(drift_majority.keys())
+    maj = list(drift_majority.values())
+    mino = list(drift_minority.values())
+
+    ax2.bar([p - 0.15 for p in range(len(x))], maj, width=0.3, label="Majorité")
+    ax2.bar([p + 0.15 for p in range(len(x))], mino, width=0.3, label="Minorité")
+
+    ax2.set_xticks(range(len(x)))
+    ax2.set_xticklabels(x)
+    ax2.set_title("Nombre de variables présentant un drift")
+    ax2.set_ylabel("Nombre de variables")
+    ax2.legend()
+
+    plt.tight_layout()
+    plt.savefig(output_path, dpi=300)
+    plt.close()
+
+    return dist, drift_majority, drift_minority
+
+
 def run_drift_reports(
     data_train,
     data_oos,

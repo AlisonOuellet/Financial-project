@@ -70,10 +70,12 @@ X_oou_test, y_oou_test = oou_test.drop(columns=['DFlag']), oou_test['DFlag']
 # %%
 from explore_data import *
 
-save_path = os.path.join(PROJECT_PATH, "outputs", "exploration", "rapport_FM12.html")
+# save_path = os.path.join(PROJECT_PATH, "outputs", "exploration", "rapport_FM12.html")
 
-data_to_explore = load_processed_data(PROJECT_PATH, windows=["FM12"], segments=['red'])
-summarize_data_to_html(data_to_explore, "FM12 - Rapport", save_path)
+# data_to_explore = load_processed_data(PROJECT_PATH, windows=["FM12"], segments=['red'])
+# summarize_data_to_html(data_to_explore, "FM12 - Rapport", save_path)
+
+get_drift(data_train, data_test, oot_test, oou_test, "outputs/drift.png")
 
 # %% [markdown]
 # ### T-SNE
