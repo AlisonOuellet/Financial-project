@@ -21,7 +21,7 @@ def get_drift(data_train, data_oos, data_oot, data_oou, output_path):
         "OOS": data_oos,
         "OOT": data_oot,
         "OOU": data_oou
-        }
+    }
 
     dist = {
         name: df["DFlag"].mean() * 100
@@ -40,20 +40,18 @@ def get_drift(data_train, data_oos, data_oot, data_oou, output_path):
         "Train–OOU": 2
     }
 
-    _, axes = plt.subplots(1, 2, figsize=(14, 6))
+    _, axes = plt.subplots(1, 2, figsize=(18, 10))
 
     ax1 = axes[0]
-
     ax1.bar(dist.keys(), dist.values())
-    ax1.set_title("Proportion de défaut (DFlag=1) par jeu de données")
-    ax1.set_ylabel("% classe minoritaire")
+    ax1.set_title("Proportion de défaut (DFlag=1) par jeu de données", fontsize=24)
+    ax1.set_ylabel("% classe minoritaire", fontsize=24)
     ax1.set_ylim(0, max(dist.values()) * 1.25)
 
     for i, v in enumerate(dist.values()):
-        ax1.text(i, v + 0.1, f"{v:.2f}%", ha='center')
+        ax1.text(i, v + 0.1, f"{v:.2f}%", ha='center', fontsize=24)
 
     ax2 = axes[1]
-
     x = list(drift_majority.keys())
     maj = list(drift_majority.values())
     mino = list(drift_minority.values())
@@ -62,10 +60,10 @@ def get_drift(data_train, data_oos, data_oot, data_oou, output_path):
     ax2.bar([p + 0.15 for p in range(len(x))], mino, width=0.3, label="Minorité")
 
     ax2.set_xticks(range(len(x)))
-    ax2.set_xticklabels(x)
-    ax2.set_title("Nombre de variables présentant un drift")
-    ax2.set_ylabel("Nombre de variables")
-    ax2.legend()
+    ax2.set_xticklabels(x, fontsize=24)
+    ax2.set_title("Nombre de variables présentant un drift", fontsize=24)
+    ax2.set_ylabel("Nombre de variables", fontsize=24)
+    ax2.legend(fontsize=24)
 
     plt.tight_layout()
     plt.savefig(output_path, dpi=300)
