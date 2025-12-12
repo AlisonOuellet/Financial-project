@@ -40,6 +40,8 @@ def get_drift(data_train, data_oos, data_oot, data_oou, output_path):
         "Train–OOU": 2
     }
 
+    plt.rcParams.update({'font.size': 24})
+
     _, axes = plt.subplots(1, 2, figsize=(18, 10))
 
     ax1 = axes[0]
